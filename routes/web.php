@@ -11,6 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'ProductController@index');
+Route::get('productlist', 'ProductController@productList')->name('productlist');
+Route::get('ppmonitor', 'ProductController@productPriceMonitor')->name('ppmonitor');
+Route::get('croncode', 'ProductController@cronCode')->name('croncode');
