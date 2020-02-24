@@ -70,7 +70,7 @@ class ProductController extends Controller
         if ( ! $latestPriceUpdated || $diffUpdated >= 1) {
             $productPriceData = [
                 'product_id' => $product->id,
-                'price'      => $productPriceMonitor
+                'price'      => $productPrice
             ];
 
             $this->prodRepo->insertProductPrice($productPriceData);
