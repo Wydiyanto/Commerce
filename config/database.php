@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => 'pgsql',
 
     /*
     |--------------------------------------------------------------------------
@@ -43,14 +43,15 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+        // mysql://b1d66f87313a60:77ec893b@us-cdbr-iron-east-04.cleardb.net/heroku_adba22c99b3ebae?reconnect=true
         'mysql' => [
             'driver' => 'mysql',
-            'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
+            'url' => 'productpricemonitor.heroku.com',
+            'host' => 'us-cdbr-iron-east-04.cleardb.net',
             'port' => env('DB_PORT', '3306'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'database' => 'heroku_adba22c99b3ebae',
+            'username' => 'b1d66f87313a60',
+            'password' => '77ec893b',
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
@@ -63,14 +64,36 @@ return [
             ]) : [],
         ],
 
+        // 'mysql' => [
+        //     'driver' => 'mysql',
+        //     'url' => env('DATABASE_URL'),
+        //     'host' => env('DB_HOST', '127.0.0.1'),
+        //     'port' => env('DB_PORT', '3306'),
+        //     'database' => env('DB_DATABASE', 'forge'),
+        //     'username' => env('DB_USERNAME', 'forge'),
+        //     'password' => env('DB_PASSWORD', ''),
+        //     'unix_socket' => env('DB_SOCKET', ''),
+        //     'charset' => 'utf8mb4',
+        //     'collation' => 'utf8mb4_unicode_ci',
+        //     'prefix' => '',
+        //     'prefix_indexes' => true,
+        //     'strict' => true,
+        //     'engine' => null,
+        //     'options' => extension_loaded('pdo_mysql') ? array_filter([
+        //         PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+        //     ]) : [],
+        // ],
+
+        // postgres://oqermonmbzebqp:973f8d3703d3cc28faa75361e50318a1a3c2792aa5cc93c27d347f1e6fcae95a@ec2-3-231-46-238.compute-1.amazonaws.com:5432/d56egn3agno2bq
+
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
+            'host' => 'ec2-3-231-46-238.compute-1.amazonaws.com',
+            'port' => '5432',
+            'database' => 'd56egn3agno2bq',
+            'username' => 'oqermonmbzebqp',
+            'password' => '973f8d3703d3cc28faa75361e50318a1a3c2792aa5cc93c27d347f1e6fcae95a',
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
