@@ -11,14 +11,14 @@
 			<th>Latest Price</th>
 			<th></th>
 		</tr>
-		<tr>
-			@foreach($products as $product)
+		@foreach($products as $product)
+			<tr>
 				<td>{{ $loop->iteration }}</td>
 				<td>{{ $product->name }}</td>
 				<td>{{ $product->latest_price }}</td>
 				<td><a href="{{ route('ppmonitor', ['product_link' => $product->url]) }}">Price Monitor</a></td>
-			@endforeach
-		</tr>
+			</tr>
+		@endforeach
 	</table>
 </body>
 </html>
